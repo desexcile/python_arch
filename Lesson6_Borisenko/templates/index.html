@@ -1,0 +1,45 @@
+﻿{% extends "site_base.html" %}
+{% block title %}
+	Моя страница
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+    <div class="content">
+        <p style="text-indent:20px">
+        Добро пожаловать на мою страницу!</p>
+        <p style="text-indent:20px">Сегодня {{date}}, Python Версия - {{python_ver}} </p>
+    </div>
+    <div>
+		<h2>Список существующих категорий, на которые делятся наши курсы:</h2>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span>Кол-во курсов: {{item.course_count()}}</span>
+			<a href="/courses-list/?id={{item.id}}">Показать курсы</a>
+        </li>
+        {% endfor %}
+	</div>
+    <div>
+		<li>
+			<a href="/follower-list/">Список подписчиков</a>
+		</li>
+		<li>
+			<a href="/create-follower/">Создать подписчика</a>
+		</li>
+		<li>
+			<a href="/add-follower/">Добавить подписчика на курс</a>
+		</li>
+	</div>
+    <div>
+        <p></p>
+		<a href="/create-category/">Вот так можно создать новую категорию</a>
+	</div>
+    <div>
+        <form method="GET" action="hello">
+            <p>Вот тут можно оставить Отзыв </p>
+                <p>- как вас зовут?
+                <input name="username" required> <input type="submit" value="Поприветствовать"></p>
+        </form>
+    </div>
+{% endblock %}

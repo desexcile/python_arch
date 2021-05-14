@@ -1,0 +1,29 @@
+{% extends "site_base.html" %}
+{% block title %}
+Создание студента
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+	<div>
+		<li>
+			<a href="/create-follower/">Создать подписчика </a>
+		</li>
+		<li>
+			<a href="/add-follower/">Добавить подписчика на курс</a>
+		</li>
+	</div>
+    <h1>Список подписчиков</h1>
+    <div>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}}
+            {% for course in item.courses %}
+                {{course.name}}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %}

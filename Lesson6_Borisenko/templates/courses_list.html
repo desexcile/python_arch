@@ -1,0 +1,27 @@
+{% extends "site_base.html" %}
+{% block title %}
+Список курсов
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+    <div>
+        <a href="/">назад на главную</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <h2>Список курсов для категории "{{name}}"</h2>
+        <p>Если интересующих курсов нет, то: </p>
+        <a href="/create-course/?id={{id}}">Создать новый курс</a>
+        <br>
+        {% for item in objects_list %}
+        <p>
+            {{item.name}} <span><a href="/clone-course/?name={{item.name}}">скопировать</a></span>
+        </p>
+        {% endfor %}
+    </div>
+{% endblock %}
