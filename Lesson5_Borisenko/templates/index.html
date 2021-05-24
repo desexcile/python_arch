@@ -1,0 +1,26 @@
+﻿{% extends "site_base.html" %}
+{% block title %}
+    Школа КриптоМайнинга
+{% endblock %}
+{% block head %}
+    Школа КриптоМайнинга
+{% endblock %}
+{% block menu %}
+{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+    <div class="content">
+        <p style="text-indent:20px">
+            Добро пожаловать в нашу школу майнинга!</p>
+
+        <p style="text-indent:20px">Дата - {{date}}</p>
+        <p style="text-indent:20px">Версия Python - {{python_ver}}</p>
+        <p style="text-indent:20px">Курс Bitcoin к Баксу - {{btc_to_usd}}</p>
+        <form method="GET" action="hello">
+            <p>Майнер, тут можно оставить отзыв
+                <input name="username" required> <input type="submit" value="Поприветствовать"></p>
+        </form>
+    </div>
+
+    </div>
+{% endblock %}

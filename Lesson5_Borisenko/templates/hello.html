@@ -1,0 +1,33 @@
+{% extends "site_base.html" %}
+{% block title %}
+Приветствователь
+{% endblock %}
+{% block head %}
+    Псс, Парень, Как насчет немного заработать?!
+{% endblock %}
+{% block menu %}
+{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+<div class="content">
+    <h2></h2>
+    <p style="text-indent:20px">
+        Помайним, {{username}}!</p>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Нравится майнить? Напиши нам об этом:</legend>
+            <p><label class="title" for="email">Ваш email:</label>
+                <input type="text" name="email" id="email" required></p>
+            <p><label for="feedback" class="title">Отзыв:</label>
+                <textarea name="feedback" id="feedback" required></textarea></p>
+            <span class="title">Оценочку влепите, пожалуйста:</span>
+            <label><input type="radio" name="evaluation" value="Огнище" /> Огнище</label>
+            <label><input type="radio" name="evaluation" value="Класс" /> Класс</label>
+            <label><input type="radio" name="evaluation" value="Пойдет" /> Пойдет</label>
+            <label><input type="radio" name="evaluation" value="Ну такое" /> Ну такое</label>
+            <label><input type="radio" name="evaluation" value="Фу, стремно" /> Фу, стремно</label></p>
+        </fieldset>
+        <div class="submit"><input type="submit" value="Засабмитить" /></div>
+    </form>
+</div>
+{% endblock %}

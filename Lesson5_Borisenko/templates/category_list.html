@@ -1,0 +1,29 @@
+{% extends "site_base.html" %}
+{% block title %}
+    Список Категорий
+{% endblock %}
+{% block head %}
+    Список Категорий
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+    <a href="/">Назад</a>
+    <p></p>
+    <a href="/create-category/">Нажми для создания новой категории!</a>
+    <h1>Список категорий</h1>
+    <ul>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} <span>Количество курсов: {{item.course_count()}}</span>
+            <a href="/course-list/?id={{item.id}}">Показать курсы</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+	<div>
+		<li><a href="/course-list/">Список курсов</a></li>
+		<li><a href="/create-course/">Создать курс</a></li>
+	</div>
+{% endblock %}
