@@ -1,0 +1,32 @@
+{% extends "site_base.html" %}
+{% block title %}
+    Создание майнера
+{% endblock %}
+{% block head %}
+    Список майнеров
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+	<div>
+		<li>
+			<a href="/create-preminer/">Создать майнера </a>
+		</li>
+		<li>
+			<a href="/add-preminer/">Добавить майнера на курс</a>
+		</li>
+	</div>
+    <h1>Список майнеров</h1>
+    <div>
+
+        {% for item in objects_list %}
+        <li>
+            {{item.name}}
+            {% for course in item.courses %}
+                {{course.name}}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "site_base.html" %}
+{% block title %}
+    Добавление Майнера
+{% endblock %}
+{% block head %}
+    Добавление Майнера
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+	<div>
+		<li>
+			<a href="/preminer-list/">Список майнеров</a>
+		</li>
+		<li>
+			<a href="/create-preminer/">Создать майнера</a>
+		</li>
+	</div>
+    <h1>Добавление майнера на курс</h1>
+    <form method="post">
+        <p>Курс: </p>
+        <select size="3" name="course_name" style="width:200px">
+            {% for item in courses %}
+            <option value="{{item.name}}">{{item.name}}</option>
+            {% endfor %}
+        </select>
+        <p>Майнер: </p>
+        <select size="3" name="preminer_name" style="width:200px">
+            {% for item in preminers %}
+            <option value="{{item.name}}">{{item.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Записать </button>
+    </form>
+{% endblock %}

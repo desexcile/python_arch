@@ -1,0 +1,27 @@
+{% extends "site_base.html" %}
+{% block title %}
+	Создание майнера
+{% endblock %}
+{% block head %}
+	Создание Майнера
+{% endblock %}
+{% block menu %}
+	{% include "site_menu.html" %}
+{% endblock %}
+{% block body %}
+	<div>
+		<li>
+			<a href="/preminer-list/">Список майнера</a>
+		</li>
+		<li>
+			<a href="/add-preminer/">Добавить майнера на курс</a>
+		</li>
+	</div>
+    <div>
+        <h1>Создание майнера</h1>
+        <form method="post">
+            <input type="text" name="name" placeholder="Имя">
+            <button type="submit">Сохранить </button>
+        </form>
+    </div>
+{% endblock %}
