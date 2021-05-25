@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <table
+        border="1"
+        align="center"
+        rules="rows"
+        style="width:60%;">
+    <tr>
+    <td>
+        <table
+            border="1"
+            bgcolor="#808080"
+            cellpadding="10"
+            style="width:100%; border-radius:5px;">
+        <tr>
+            <th>
+                <h1>{% block head %}{% endblock %}</h1>
+                <h3></h3>
+            </th>
+        </tr>
+        </table>
+        <table
+            border="1"
+            bgcolor="#e6e6fa"
+            cellpadding="10"
+            style="width:100%; border-radius:5px;">
+        <tr>
+            <td
+                rowspan="2"
+                style="width:80%">
+                {% block body %}    {% endblock %}
+            </td>
+            <td bgcolor="#e6e6fa">
+                <h3>Меню</h3>
+                {% block menu %}    {% endblock %}
+            </td>
+        </tr>
+        <tr>
+            <td
+                bgcolor="#e6e6fa"
+                align="center">
+                <h3>Важно!</h3>
+                <p>Для вывода несуществующей страницы - можете в адресную строку добавить что хотите...</p>
+            </td>
+        </tr>
+        </table>
+        <table
+            border="1"
+            bgcolor="#808080"
+            height="100"
+            cellpadding="10"
+            style="width:100%; border-radius:5px;">
+        <tr>
+            <th>
+                <h3>Курс биткоина - {{btc_to_usd}}</h3>
+            </th>
+        </tr>
+        </table>
+    </td>
+    </tr>
+    </table>
+</body>
+</html>
